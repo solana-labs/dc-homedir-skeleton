@@ -1,0 +1,25 @@
+#!/bin/bash
+
+SOLANA_LOCKFILE="/home/solana/.solana.lock"
+
+[ -f ~/.bashrc ] && . ~/.bashrc
+
+GUEST_WARNING="
+
+WARNING!!!!!!!!!!!
+
+YOU ARE A GUEST IN ${SOLANA_LOCK_USER}'s TESTNET.  BE KIND!
+
+WARNING!!!!!!!!!!!
+
+"
+
+if [ -f "$SOLANA_LOCKFILE" ]; then
+  [ -f "$SOLANA_LOCKFILE" ] && . "$SOLANA_LOCKFILE"
+  if ! [ "$SOLANA_USER" = "$SOLANA_LOCK_USER" ]; then
+    export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;31m\]GUEST\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    clear
+    echo "$GUEST_WARNING"
+  fi
+fi
+
