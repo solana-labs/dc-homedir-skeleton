@@ -28,3 +28,6 @@ fi
 
 SOLANA_BIN="/home/solana/.local/share/solana/install/active_release/bin"
 [ -d "${SOLANA_BIN}" ] && export PATH="${SOLANA_BIN}:${PATH}"
+
+CARGO_BIN="/home/solana/.cargo/bin"
+[ -d "${CARGO_BIN}" ] && export PATH="${PATH}:${CARGO_BIN}"
