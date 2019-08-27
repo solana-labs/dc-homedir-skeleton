@@ -25,3 +25,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+SOLANA_BIN="/home/solana/.local/share/solana/install/active_release/bin"
+[ -d "${SOLANA_BIN}" ] && export PATH="${SOLANA_BIN}:${PATH}"
